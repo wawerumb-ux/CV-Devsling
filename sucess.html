@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Message Sent - John Waweru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="image/atom.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #1a2639;
+            --secondary: #00b7eb;
+            --accent: #ff4d4d;
+            --light: #f0f4f8;
+            --text: #2c2c2c;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s ease-in-out;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 70%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #e8f0fa);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 450px;
+            perspective: 1000px;
+            animation: flipInCard 1.2s ease-out forwards;
+            color: var(--text);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes flipInCard {
+            from { opacity: 0; transform: rotateX(-30deg); }
+            to { opacity: 1; transform: rotateX(0); }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shineBar 2.5s linear infinite;
+        }
+
+        @keyframes shineBar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            animation: textShine 3s ease-in-out infinite;
+        }
+
+        h1 i {
+            color: var(--accent);
+            margin-right: 10px;
+            animation: iconBounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0%; }
+            50% { background-position: 200%; }
+            100% { background-position: 0%; }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            animation: pulseButton 2s ease-in-out infinite;
+        }
+
+        a:hover {
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        a::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.5) 10%, transparent 60%);
+            transform: rotate(25deg);
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+
+        a:hover::before {
+            opacity: 1;
+            animation: glowMove 1.2s linear infinite;
+        }
+
+        @keyframes glowMove {
+            0% { transform: translateX(-50%) rotate(25deg); }
+            100% { transform: translateX(150%) rotate(25deg); }
+        }
+
+        a i {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 25px;
+                margin: 20px;
+                max-width: 90%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1><i class="fas fa-check-circle"></i> Thank You!</h1>
+        <p>Your message has been sent successfully. I'll get back to you soon.</p>
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Resume</a>
+    </div>
+</body>
+</html>
